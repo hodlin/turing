@@ -1,5 +1,5 @@
 #!/home/dmytro/Envs/turing/bin python3.5
-from algorithm import states_table
+from .algorithm import states_table
 
 
 class Subtractor:
