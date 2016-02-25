@@ -1,8 +1,9 @@
 #!/home/dmytro/Envs/turing/bin python3.5
 from .algorithm import states_table
+from .turing_machine import TuringMachine
 
 
-class Subtractor:
+class Subtractor(TuringMachine):
     """
     Realization of Turing machine for subtraction two integer numbers
     """
@@ -16,36 +17,17 @@ class Subtractor:
         """
         return minuend >= take
 
-    @staticmethod
-    def to_unary(decimal):
-        """
-        Converts decimal number to unary
-        :param decimal: decimal number
-        :return: list of '1'
-        """
-        return [1 for _ in range(decimal)]
-
-    @staticmethod
-    def to_decimal(unary):
-        """
-        Converts unary number to decimal
-        :param unary: list of '1'
-        :return: decimal number
-        """
-        return sum(unary)
-
     def __init__(self, minuend, take):
 
         if not Subtractor.is_valid(minuend, take):
             raise ValueError("Minuend (entered: '{}') should be greater than take (entered: '{}')"
                              .format(minuend, take))
 
+        super().__init__()
+
         self._tape = ['blank'] + Subtractor.to_unary(minuend) + \
                      ['blank'] + Subtractor.to_unary(take) + \
                      ['blank']
-        # print(self._tape)
-        self._head = 1
-        self._steps = 0
 
     def evaluate(self):
         """
@@ -84,4 +66,4 @@ if __name__ == '__main__':
     Sub = Subtractor(minuend, take)
     result, steps = Sub.evaluate()
 
-    print('Result is: {} ({} steps was taken to calculate)'.format(result, steps))
+    print('Result is: {} ({} steps was taken to perform calculation)'.format(result, steps))
