@@ -15,7 +15,7 @@ class TuringMachine(metaclass=abc.ABCMeta):
         :param decimal: decimal number
         :return: list of '1'
         """
-        return [1 for _ in range(decimal)]
+        return ['1'] * decimal
 
     @staticmethod
     def to_decimal(unary):
@@ -24,7 +24,7 @@ class TuringMachine(metaclass=abc.ABCMeta):
         :param unary: list of '1'
         :return: decimal number
         """
-        return sum(unary)
+        return len(unary)
 
     @abc.abstractmethod
     def __init__(self):
