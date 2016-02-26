@@ -1,13 +1,14 @@
 #!/home/dmytro/Envs/turing/bin python3.5
 from .algorithm import states_table
 from .turing_machine import TuringMachine
+from copy import deepcopy
 
 
 class Subtractor(TuringMachine):
     """
     Realization of Turing machine for subtraction two integer numbers
     """
-    _state_table = states_table
+    _state_table = deepcopy(states_table)
 
     @staticmethod
     def is_valid(minuend, take):
