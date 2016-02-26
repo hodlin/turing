@@ -1,5 +1,5 @@
 #!/home/dmytro/Envs/turing/bin python3.5
-from subtractor import Subtractor
+from machines import Subtractor
 
 
 if __name__ == '__main__':
