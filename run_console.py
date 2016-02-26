@@ -1,4 +1,4 @@
-#!/home/dmytro/Envs/turing/bin python3.5
+#!/user/bin python3
 from machines import Subtractor
 
 

@@ -1,4 +1,4 @@
-#!/home/dmytro/Envs/turing/bin python3.5
+#!/user/bin python3
 from .algorithm import states_table
 from .turing_machine import TuringMachine
 from copy import deepcopy
@@ -54,7 +54,7 @@ class Subtractor(TuringMachine):
             self._head += instructions['move']
             state = instructions['next']
             print(self._tape)
-            print(self._head, state)
+            print('move head position to: {} | next state: {}'.format(self._head, state))
             if state == 'stop':
                 break
 
